@@ -1,1 +1,1 @@
-# hackerrank-problem-solving
+some problems i solved on hackerrank

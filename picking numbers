@@ -1,0 +1,25 @@
+function pickingNumbers(a) {
+    // Write your code here
+    let obj = {};
+    let arr = a.sort((a,b)=>a-b);
+    for(let i of arr){
+        if(obj.hasOwnProperty(i)){
+            obj[i].push(i);
+        }
+        else{
+            if( obj.hasOwnProperty(i-1)){
+                obj[i-1].push(i);
+            }
+            else{
+                obj[i] = [i];
+            }
+        }
+    }
+    let b = 0;
+    for(let j in obj){
+        if(b < obj[j].length){
+            b = obj[j].length;
+        }
+    }
+    return b;
+}

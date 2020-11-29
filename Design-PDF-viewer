@@ -1,0 +1,7 @@
+function designerPdfViewer(h, word) {
+    let letter = ['a','b','c','d','f','e','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+    let arr = word.split("");
+    let b = arr.map( item => letter.indexOf(item));
+    let tall = b.map( item => h[item]);
+    return Math.max(...tall) * arr.length;
+}

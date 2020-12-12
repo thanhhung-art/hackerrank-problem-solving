@@ -1,0 +1,14 @@
+function arrayManipulation(n, queries) {
+    let arr = [...new Array(n)].map(el => 0);
+    for(let i of queries){
+        arr[i[0] - 1] += i[2];
+        arr[i[1]] -= i[2];
+    }
+    let max = 0;
+    let count = 0;
+    arr.forEach( el => {
+        count += el;
+        if(count > max){max = count};
+    });
+    return max;
+}

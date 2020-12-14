@@ -1,0 +1,16 @@
+function insertNodeAtPosition(head, data, position) {
+    let newNode = new SinglyLinkedListNode(data);
+    if(position == 0){
+        newNode.next = head;
+    }
+    else{
+        let nodeCurr = head;
+        while(position-1 > 0){
+            nodeCurr = nodeCurr.next;
+            position--;
+        }
+        newNode.next = nodeCurr.next;
+        nodeCurr.next = newNode;
+    }
+    return head;
+}

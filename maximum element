@@ -1,0 +1,20 @@
+function processData(input) {
+    let regex = /[\D]/gi;
+    let flatArr = input.replace(regex," ");
+    let arr = flatArr.split(" ").map(el => Number.parseInt(el));
+    arr.shift()
+    let stack = [];
+    for(let i = 0; i < arr.length; i++){
+        if( arr[i] == 1 ){
+            let next = arr[i+1];
+            stack.unshift(next);
+            i++;
+        }
+        else if( arr[i] == 2){
+            stack.shift();
+        }
+        else if( arr[i] == 3){
+            console.log(Math.max(...stack));
+        }
+    }
+} 
